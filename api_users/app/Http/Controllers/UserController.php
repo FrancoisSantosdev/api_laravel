@@ -24,7 +24,7 @@ class UserController extends Controller
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->proficao = $request->profession;
+        $user->profession = $request->profession;
         $user->save();
 
         return response()->json(['message' => 'User created successfully'], 201);
@@ -35,7 +35,7 @@ class UserController extends Controller
         $user = User::findOrFail($id);
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->proficao = $request->profession;
+        $user->profession = $request->profession;
         $user->save();
 
         return response()->json(['message' => 'User updated successfully'], 200);
