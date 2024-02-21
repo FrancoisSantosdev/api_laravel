@@ -25,7 +25,7 @@ class UserController extends Controller
         $validator = Validator::make($request->all(), [
         'name' => 'required',
         'email' => 'required|email',
-        'proficao' => 'required'
+        'profession' => 'required'
         ]);
 
         if ($validator->fails()) {
@@ -35,7 +35,7 @@ class UserController extends Controller
         $user = new User();
         $user->name = $request->name;
         $user->email = $request->email;
-        $user->proficao = $request->proficao;
+        $user->profession = $request->profession;
         $user->save();
 
         return response()->json(['message' => 'User created successfully'], 201);
